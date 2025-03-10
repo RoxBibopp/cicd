@@ -29,6 +29,9 @@ jobs:
       - name: Build de l'appli
         run: npm run build
 
+      - name: test du build
+        run: ls -la ./dist
+
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
