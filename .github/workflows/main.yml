@@ -41,6 +41,15 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v3
 
+      - name: Download dist folder
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist
+
+      - name: test du dist
+        run: ls -la ./dist
+      
       - name: Deploiement en github page
         uses: peaceiris/actions-gh-pages@v3
         with:
